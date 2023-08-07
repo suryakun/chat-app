@@ -2,10 +2,10 @@ Certainly! Here's a template for the README file that addresses all the sections
 
 ---
 
-# Submission for [Your Name]
+# Submission for Surya
 
 ## Date of Submission
-[Insert Date of Submission]
+7th August 2023
 
 ## Instructions to Run Assignment Locally
 To run this solution locally, you can use Docker Compose. Follow these steps:
