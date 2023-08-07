@@ -1,7 +1,3 @@
-Certainly! Here's a template for the README file that addresses all the sections and questions you've provided:
-
----
-
 # Submission for Surya
 
 ## Date of Submission
