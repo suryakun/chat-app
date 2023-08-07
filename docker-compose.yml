@@ -1,0 +1,46 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    networks:
+      - my-network
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+
+  nestjs:
+    build:
+      context: ./backend
+    container_name: nestjs
+    networks:
+      - my-network
+    depends_on:
+      - mongodb
+    ports:
+      - "5000:5000"
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/db # Update with your MongoDB configuration
+
+  vite-react:
+    build:
+      context: ./chat
+    container_name: vite-react
+    networks:
+      - my-network
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_API_HOST: http://0.0.0.0:5000 # Use the service name defined in this file
+      VITE_MONGODB_URI: mongodb://mongodb:27017/mydb # Update with your MongoDB configuration
+    depends_on:
+      - nestjs
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  mongodb-data:

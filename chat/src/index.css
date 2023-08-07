@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .title {
+    color: black;
+    font-family: theme('fontFamily.sans');
+    font-weight: 600;
+    size: 30px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  .join {
+    color: white;
+    font-family: theme('fontFamily.sans');
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: theme('colors.green');
+    border-radius: 10px;
+  }
+
+  .login-input {
+    background-color: theme('colors.grey-light');
+    border-radius: 10px;
+  }
+
+  .sender {
+    position: relative;
+    max-width: 80%;
+  }
+  .sender:after {
+    content: " ";
+    width: 12px;
+    height: 0px;
+    position: absolute;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 16px solid theme('colors.green');
+    right: 8px;
+    bottom: -16px;
+    background-color: theme('colors.white');
+  }
+
+  .receiver {
+    position: relative;
+    max-width: 80%;
+  }
+  .receiver:after {
+    content: " ";
+    width: 12px;
+    height: 0px;
+    position: absolute;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 16px solid theme('colors.grey');
+    left: 8px;
+    bottom: -16px;
+    background-color: theme('colors.white');
+  }
+}
